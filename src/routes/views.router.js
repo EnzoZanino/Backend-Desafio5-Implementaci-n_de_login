@@ -31,6 +31,7 @@ router.get("/realtimeproducts", (req, res) => {
 		return; // Importante: Terminar la ejecución después de redirigir
 	}
 	res.render("realTimeProducts", {
+		user: req.session.user,
 		title: "realTimeProducts",
 		email: req.session.email
 	});
@@ -41,7 +42,11 @@ router.get("/chat", (req, res) => {
 		res.redirect("/users/login");
 		return; // Importante: Terminar la ejecución después de redirigir
 	}
-	res.render("chat");
+	res.render("chat", {
+		title: "Chat",
+		user: req.session.user
+		}
+	)
 });
 
 router.get("/login", (req, res) => {
@@ -62,26 +67,26 @@ router.get("/logout", (req, res) => {
 	});
 });
 
-router.get('/homeprivate', auth, async(req, res) => {
-	if (!req.session.user) {
-		res.redirect("/users/login");
-		return; // Importante: Terminar la ejecución después de redirigir
-	}
-    try {
-		const products = await productDao.getAllProducts();
-		res.render("home", {
-			user: req.session.user,
-			admin: req.session.admin,
-			products,
-		});
-	} catch (error) {
-		console.log(error);
-		res.json({
-			message: "Error",
-			error,
-		});
-	}
-});
+// router.get('/homeprivate', auth, async(req, res) => {
+// 	if (!req.session.user) {
+// 		res.redirect("/users/login");
+// 		return; // Importante: Terminar la ejecución después de redirigir
+// 	}
+//     try {
+// 		const products = await productDao.getAllProducts();
+// 		res.render("home", {
+// 			user: req.session.user,
+// 			admin: req.session.admin,
+// 			products,
+// 		});
+// 	} catch (error) {
+// 		console.log(error);
+// 		res.json({
+// 			message: "Error",
+// 			error,
+// 		});
+// 	}
+// });
 
 // Middleare auth
 function auth(req, res, next) {
@@ -97,7 +102,11 @@ router.get("/cart", (req, res) => {
 		res.redirect("/users/login");
 		return; // Importante: Terminar la ejecución después de redirigir
 	}
-	res.render("cart");
+	res.render("cart", {
+		title: "Cart Ecommerce",
+		user: req.session.user
+		}
+	)
 });
 
 router.get("/realTimeProducts/:pid", async (req, res) => {

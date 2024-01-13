@@ -2,12 +2,12 @@
   {{#if user}}
     <div class="container">
       <h1>Bienvenido {{user.name}}!</h1>
-      <p>Email: {{user.email}}</p>
-      <p>Edad: {{user.age}}</p>
+      {{!-- <p>Email: {{user.email}}</p>
+      <p>Edad: {{user.age}}</p> --}}
       {{#if admin}}
-      <p>Rol: Admin</p>
+      <h3>Rol: Admin</h3>
         {{else}}
-        <p>Rol: Usuario</p>
+        <h3>Rol: Usuario</h3>
       {{/if}}
     </div>
   {{/if}}
