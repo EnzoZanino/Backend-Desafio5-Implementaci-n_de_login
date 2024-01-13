@@ -1,0 +1,54 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PreEntrega2 - Enzo Zanino</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/fontawesome/css/all.min.css" />
+  <link rel="icon" href="/icon.png" type="image/png" />
+</head>
+
+<body>
+  <header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+      <div class="container d-flex justify-content-start">
+        <a class="navbar-brand" href="/"><img src="/icon.png" alt="Inicio" height="30" width="30"> Inicio</a>
+      </div>
+      <div class="container d-flex justify-content-end">
+        <a class="navbar-brand" href="/chat"><i class="fa-regular fa-comments fa-xl"></i> Live Chat</a>
+        <a class="navbar-brand" href="/realTimeProducts"><i class="fa-regular fa-light fa-rocket-launch fa-xl"></i>
+          Productos en Tiempo Real</a>
+        <a class="navbar-brand" href="/cart"><i class="fa-regular fa-shopping-cart fa-xl"></i> Carrito</a>
+      </div>
+      <div class="navbar-nav">
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="fas fa-user fa-xl"></i>
+          </a>
+          <ul id="uldrop" class="dropdown-menu" aria-labelledby="userDropdown">
+            {{#if user}}
+              <li><a class="adrop dropdown-item" href="/users">Ver perfil</a></li>
+              <li><a class="adrop dropdown-item" role="button" onclick="logout()">Cerrar Sesion</a></li>
+              {{else}}
+              <li><a class="adrop dropdown-item" href="/users/login" onclick="logout()">Iniciar Sesion</a></li>
+            {{/if}}
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  <div class="container mt-4" style="margin-bottom: 60px; ">
+    {{{body}}}
+  </div>
+
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/main.js"></script>
+
+</body>
+
+</html>

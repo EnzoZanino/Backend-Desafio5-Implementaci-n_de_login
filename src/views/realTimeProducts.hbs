@@ -1,0 +1,100 @@
+<div class="container-fluid p-4 bg-light" style="background-color: #e2e2e2; border-radius: 40px; padding: 30px;">
+  <h1 class="display-4 text-primary text-center">
+    <strong>Lista de Productos en Tiempo Real</strong>
+  </h1>
+
+  <div class="row mt-4">
+    <div class="col-md-3 border rounded p-4 bg-secondary border-3">
+      <h3 class="mb-4 text-center">Agregar Producto</h3>
+      <form id="addProductForm" class="mb-4">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="title">Título:</label>
+            <input type="text" class="form-control" id="title" required />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="price">Precio:</label>
+            <input type="number" class="form-control" id="price" required />
+          </div>
+          <div class="col-md-12 mb-3">
+            <label for="description">Descripción:</label>
+            <input type="text" class="form-control" id="description" required />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="code">Código:</label>
+            <input type="text" class="form-control" id="code" required />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="stock">Stock:</label>
+            <input type="number" class="form-control" id="stock" required />
+          </div>
+          <div class="col-md-12 mb-3">
+            <label for="thumbnail">URL de la imagen:</label>
+            <input type="text" class="form-control" id="thumbnail" required />
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Agregar Producto</button>
+      </form>
+    </div>
+
+    <div class="col-md-9 border rounded p-4 bg-info border-3">
+      <h3 class="mb-3 text-center">Productos Disponibles</h3>
+      <div>
+        <h5>Ordenar por precio:</h5>
+          <button type="button" class="btn btn-secondary" onclick="sortByPrice('asc')">Menor Precio</button>
+          <button type="button" class="btn btn-secondary" onclick="sortByPrice('desc')">Mayor Precio</button>
+          <button type="button" class="btn btn-secondary" onclick="resetPrice()">Restablecer Orden</button>
+      </div>
+      <div class="row mb-4" id="productsList">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editModalLabel">Editar Producto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="editForm">
+          <input type="hidden" id="productId" name="productId">
+          <div class="mb-3">
+            <label for="editedTitle" class="form-label">Título:</label>
+            <input type="text" id="editedTitle" class="form-control" />
+          </div>
+          <div class="mb-3">
+            <label for="editedDescription" class="form-label">Descripción:</label>
+            <textarea id="editedDescription" class="form-control"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="editedPrice" class="form-label">Precio:</label>
+            <input type="number" id="editedPrice" class="form-control" />
+          </div>
+          <div class="mb-3">
+            <label for="editedThumbnail" class="form-label">URL de la imagen:</label>
+            <input type="text" id="editedThumbnail" class="form-control" />
+          </div>
+          <div class="mb-3">
+            <label for="editedCode" class="form-label">Código:</label>
+            <input type="text" id="editedCode" class="form-control" />
+          </div>
+          <div class="mb-3">
+            <label for="editedStock" class="form-label">Stock:</label>
+            <input type="number" id="editedStock" class="form-control" />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="saveChanges()">Editar Producto</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/realTimeProducts.js"></script>
+<script src="/js/sweetalert2.all.min.js"></script>
+<script src="/js/jquery.min.js"></script>

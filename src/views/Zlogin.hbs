@@ -1,0 +1,18 @@
+<h1 class="text-center">Iniciar Sesión</h1><br>
+<div class="bg-warning rounded mx-auto text-center" style="width: 65%;border:2px solid red; padding:2px">
+    <h2>¡POR EL MOMENTO SOLO "EMAIL"!</h2>
+    <h3>Al solo efecto de probar la identificacion del usuario</h3>
+</div>
+<div class="container mt-4" style="width: 40%; margin-bottom: 100px;">
+    <form id="loginForm" class="mt-4">
+        <div class="mb-3">
+            <label for="emailInput" class="form-label">Correo Electrónico:</label>
+            <input type="email" class="form-control" id="emailInput" placeholder="Ingrese su correo electrónico"
+                required>
+        </div>
+        <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+    </form>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/sweetalert2.all.min.js"></script>
+<script src="/js/login.js"></script>

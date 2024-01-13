@@ -1,0 +1,21 @@
+<div class="container mt-4" style="width: 75%; margin-bottom: 100px;">
+    <h1 class="text-center">Chat en tiempo real</h1>
+    <div class="row mt-4" style="background-color: rgb(194, 191, 191); padding-top:10px; border-radius:15px">
+        <div class="col-md-5">
+            <h4 id="user-email">
+                {{email}}
+            </h4><hr>
+            <div class="mt-2">
+                <input type="text" id="message-input" class="form-control" placeholder="Escribe tu mensaje..." required />
+                <button type="button" id="send-message" class="btn btn-primary mt-2 mb-2">Enviar</button>
+            </div>
+        </div>
+        <div class="col-md-7" style="max-height: 600px; overflow-y: auto;">
+            <div id="chat-container">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/sweetalert2.all.min.js"></script>
+<script src="/js/chat.js"></script>

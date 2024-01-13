@@ -1,0 +1,10 @@
+<div>
+	{{#if user}}
+		<h1>Tu perfil (sin datos sensibles)</h1>
+		<p>{{user.name}}</p>
+		<p>{{user.email}}</p>
+		<p>{{user.age}}</p>
+        {{else}}
+        <h1>No hay un usuario logeado!</h1>
+	{{/if}}
+</div>

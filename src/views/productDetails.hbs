@@ -1,0 +1,77 @@
+<div id="container_details" class="container mt-4" style="background-color: #e2e2e2; border-radius: 40px; padding: 30px;">
+    <h1 class="text-center">Detalles del Producto</h1>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="img-container" style="width: 70%; height: 100%; overflow: hidden;">
+                <img src="{{product.thumbnail}}" class="img-fluid" alt="{{product.title}}">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h2 class="text-info">{{product.title}}</h2>
+            <p class="description" style="font-weight: bold; font-size: 1.1em;">{{product.description}}</p>
+            <p>Precio: $ {{product.price}}</p>
+            <p>Código: {{product.code}}</p>
+            <p>Stock: {{product.stock}}</p>
+
+            <div class="mt-4">
+                <button title="Editar" onclick="botonEditar('{{product._id}}')" class="btn btn-warning"
+                    data-bs-toggle="modal" data-bs-target="#editModal" data-bs-title="{{product.title}}"
+                    data-bs-stock="{{product.stock}}" data-bs-code="{{product.code}}"
+                    data-bs-description="{{product.description}}" data-bs-price="{{product.price}}"
+                    data-bs-thumbnail="{{product.thumbnail}}"><i class="fa-regular fa-pen-to-square"></i> Editar</button>
+                <button class="btn btn-danger" onclick="deleteProduct('{{product._id}}')"><i
+                        class="fa-regular fa-trash-can"></i> Eliminar</button>
+                <a href="/realTimeProducts" class="btn btn-secondary"><i class="fa-regular fa-rotate-left"></i> Volver</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Editar Producto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editForm">
+                    <input type="hidden" id="productId" name="productId">
+                    <div class="mb-3">
+                        <label for="editedTitle" class="form-label">Título:</label>
+                        <input type="text" id="editedTitle" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="editedDescription" class="form-label">Descripción:</label>
+                        <textarea id="editedDescription" class="form-control"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editedPrice" class="form-label">Precio:</label>
+                        <input type="number" id="editedPrice" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="editedThumbnail" class="form-label">URL de la imagen:</label>
+                        <input type="text" id="editedThumbnail" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="editedCode" class="form-label">Código:</label>
+                        <input type="text" id="editedCode" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="editedStock" class="form-label">Stock:</label>
+                        <input type="number" id="editedStock" class="form-control" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="saveChanges()">Editar Producto</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/productDetails.js"></script>
+<script src="/js/sweetalert2.all.min.js"></script>
+<script src="/js/jquery.min.js"></script>

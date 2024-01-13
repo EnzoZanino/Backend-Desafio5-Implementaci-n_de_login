@@ -1,0 +1,128 @@
+[
+	{
+		"status": true,  
+		"title": "Apple",
+		"description": "A round, red fruit with a crisp texture.",
+		"price": 0.75,
+		"thumbnail": "https://elegifruta.com.ar/wp-content/uploads/2017/07/manzana_roja.jpg",
+		"code": "APL001",
+		"stock": 50
+	},
+	{
+		"status": true,  
+		"title": "Banana",
+		"description": "A long, curved fruit with a yellow peel.",
+		"price": 0.50,
+		"thumbnail": "https://www.shutterstock.com/image-photo/bunch-bananas-isolated-on-white-600nw-1722111529.jpg",
+		"code": "BNN002",
+		"stock": 75
+	},
+	{
+		"status": true,  
+		"title": "Orange",
+		"description": "A citrus fruit with a bright orange color.",
+		"price": 0.60,
+		"thumbnail": "https://www.lechepuleva.es/documents/13930/203222/naranja_g.jpg/374b25a1-2f66-4c7a-b7d1-d123cb310073?t=1423215361000",
+		"code": "ORN003",
+		"stock": 60
+	},
+	{
+		"status": true,  
+		"title": "Grapes",
+		"description": "Small, juicy fruits that come in various colors.",
+		"price": 1.25,
+		"thumbnail": "https://www.collinsdictionary.com/images/full/grape_229112122.jpg",
+		"code": "GRP004",
+		"stock": 40
+	},
+	{
+		"status": true,  
+		"title": "Strawberry",
+		"description": "A small, sweet fruit with a bright red color.",
+		"price": 0.90,
+		"thumbnail": "https://makipura.com.ar/wp-content/uploads/2019/12/p11.jpg",
+		"code": "STB005",
+		"stock": 55
+	},
+	{
+		"status": true,  
+		"title": "Pineapple",
+		"description": "A tropical fruit with a tough, spiky exterior.",
+		"price": 2.50,
+		"thumbnail": "https://www.collinsdictionary.com/images/full/pineapple_124985672.jpg",
+		"code": "PNP006",
+		"stock": 30
+	},
+	{
+		"status": true,  
+		"title": "Watermelon",
+		"description": "A large, juicy fruit with a green rind and red flesh.",
+		"price": 3.00,
+		"thumbnail": "https://i5.walmartimages.com/seo/Fresh-Personal-Watermelon-Each_14487aaf-d86a-4b46-acaf-7621b90286bb.fb737768267fcdc95c33f355b730ad15.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
+		"code": "WML007",
+		"stock": 25
+	},
+	{
+		"status": true,  
+		"title": "Mango",
+		"description": "A sweet, tropical fruit with a yellowish-orange color.",
+		"price": 1.75,
+		"thumbnail": "https://static.libertyprim.com/files/familles/mangue-large.jpg?1569271798",
+		"code": "MNG008",
+		"stock": 35
+	},
+	{
+		"status": true,  
+		"title": "Kiwi",
+		"description": "A small, brown fruit with a fuzzy skin and green flesh.",
+		"price": 1.00,
+		"thumbnail": "https://www.frutas-hortalizas.com/img/fruites_verdures/presentacio/14.jpg",
+		"code": "KWI009",
+		"stock": 45
+	},
+	{
+		"status": true,  
+		"title": "Pear",
+		"description": "A sweet, juicy fruit with a green or yellow color.",
+		"price": 0.80,
+		"thumbnail": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/11/27/0/HEW_Pears_s4x3.jpg.rend.hgtvcom.1280.1280.suffix/1371612039080.jpeg",
+		"code": "PER010",
+		"stock": 65
+	},
+	{
+		"status": true,  
+		"title": "Cherry",
+		"description": "Small, round fruits that come in various colors.",
+		"price": 1.50,
+		"thumbnail": "https://smartyield.in/wp-content/uploads/2021/06/Cherry.png",
+		"code": "CHR011",
+		"stock": 50
+	},
+	{
+		"status": true,  
+		"title": "Peach",
+		"description": "A soft, fuzzy fruit with a yellow or orange color.",
+		"price": 1.20,
+		"thumbnail": "https://static.libertyprim.com/files/familles/peche-large.jpg?1574630286",
+		"code": "PCH012",
+		"stock": 55
+	},
+	{
+		"status": true,  
+		"title": "Raspberry",
+		"description": "A small, tart fruit that comes in red, black, or yellow varieties.",
+		"price": 1.80,
+		"thumbnail": "https://img.imageboss.me/fourwinds/width/425/dpr:2/shop/files/meeker-raspberry-bush.jpg?v=1697579124",
+		"code": "RSP014",
+		"stock": 40
+	},
+	{
+		"status": true, 
+		"title": "Blueberry",
+		"description": "A small, sweet fruit that is dark blue in color.",
+		"price": 1.30,
+		"thumbnail": "https://m.media-amazon.com/images/I/41i-DrykzhL._AC_UF1000,1000_QL80_.jpg",
+		"code": "BLB015",
+		"stock": 45
+	}
+]
