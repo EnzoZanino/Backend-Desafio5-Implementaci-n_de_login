@@ -48,6 +48,20 @@ router.get("/login", (req, res) => {
 	res.render("login");
 });
 
+router.get("/logout", (req, res) => {
+	req.session.destroy((error) => {
+		if (error) {
+			res.json({ error: "Error logout", msg: "Error al cerrar la session" });
+		}
+		// res.send("Session cerrada correctamente!");
+		// res.write('<html><head><title>Mi HTML</title></head><body>');
+		// res.write('<h1>Session cerrada correctamente!</h1> <a href="/"><button>Volver al inicio</button></a> <a href="/users/login"><button>Iniciar Sesion</button></a>');
+		// res.write('</body></html>');
+		// res.end();
+		res.redirect("/users/login");
+	});
+});
+
 router.get('/homeprivate', auth, async(req, res) => {
 	if (!req.session.user) {
 		res.redirect("/users/login");
@@ -77,19 +91,6 @@ function auth(req, res, next) {
         return res.status(403).send("Usuario no autorizado para ingresar a este recurso.");
     }
 }
-
-router.get("/logout", (req, res) => {
-	req.session.destroy((error) => {
-		if (error) {
-			res.json({ error: "Error logout", msg: "Error al cerrar la session" });
-		}
-		// res.send("Session cerrada correctamente!");
-		res.write('<html><head><title>Mi HTML</title></head><body>');
-		res.write('<h1>Session cerrada correctamente!</h1> <a href="/"><button>Volver al inicio</button></a> <a href="/users/login"><button>Iniciar Sesion</button></a>');
-		res.write('</body></html>');
-		res.end();
-	});
-});
 
 router.get("/cart", (req, res) => {
 	if (!req.session.user) {
